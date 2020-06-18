@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(lib)
+project(testCall)
 
 find_package(
     catkin REQUIRED COMPONENTS
@@ -10,11 +10,10 @@ find_package(
 
 catkin_package()
 
-add_library(print
-    SHARED
-    src/print.cpp
-)
-
-target_include_directories(print
-    PUBLIC include
+add_executable(main
+    src/main.cpp)
+    
+target_link_libraries(main
+    testLib
+    ${catkin_LIBRARIES}
 )
