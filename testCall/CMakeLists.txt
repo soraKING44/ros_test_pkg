@@ -6,14 +6,14 @@ find_package(
     roscpp
     rospy
     std_msgs
+    testLib
 )
 
 catkin_package()
 
 add_executable(main
     src/main.cpp)
-    
+
 target_link_libraries(main
-    testLib
     ${catkin_LIBRARIES}
 )

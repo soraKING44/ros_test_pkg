@@ -8,13 +8,18 @@ find_package(
     std_msgs
 )
 
-catkin_package()
+catkin_package(
+    INCLUDE_DIRS include
+    LIBRARIES testLib
+)
 
+# ライブラリに追加
 add_library(testLib
     SHARED
     src/print.cpp
 )
 
+# ヘッダーファイルの読み込み
 target_include_directories(testLib
     PUBLIC include
 )
