@@ -13,13 +13,13 @@ catkin_package(
     LIBRARIES testLib
 )
 
-# ライブラリに追加
+### ライブラリに追加
 add_library(testLib
     SHARED
     src/print.cpp
 )
 
-# ヘッダーファイルの読み込み
+### ヘッダーファイルの読み込み
 target_include_directories(testLib
     PUBLIC include
 )
