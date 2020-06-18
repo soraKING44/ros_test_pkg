@@ -25,21 +25,13 @@ set_target_properties(testLib
     /workdir/catkin_ws/src/ros_test_pkg/releaseCall/include
 )
 
+target_link_libraries(r_main
+    testLib
+)
+
 ### print debag
 #message("test")
 
 ### 出力先の指定
 #set(EXECUTABLE_OUTPUT_PATH /hoge)
 #set(LIBRARY_OUTPUT_PATH /hoge)
-
-target_link_libraries(r_main
-    testLib
-)
-
-#link_libraries(
-#    /workdir/catkin_ws/src/ros_test_pkg/releaseCall/
-#)
-
-#link_directories(
-#    /workdir/catkin_ws/src/ros_test_pkg/releaseCall/include/
-#)
