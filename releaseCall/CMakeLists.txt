@@ -13,16 +13,17 @@ add_executable(r_main
     src/r_main.cpp
 )
 
+### 動的ライブラリとヘッダーのパスを追加
 add_library(testLib SHARED IMPORTED)
 set_target_properties(testLib
     PROPERTIES
     IMPORTED_LOCATION
-    /workdir/catkin_ws/src/ros_test_pkg/releaseCall/libtestLib.so
+    ${PROJECT_SOURCE_DIR}/libtestLib.so
 )
 set_target_properties(testLib
     PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES
-    /workdir/catkin_ws/src/ros_test_pkg/releaseCall/include
+    ${PROJECT_SOURCE_DIR}/include
 )
 
 target_link_libraries(r_main
